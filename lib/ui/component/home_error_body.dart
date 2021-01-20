@@ -20,7 +20,7 @@ class ErrorBody extends StatelessWidget {
         children: [
           Text(message),
           ElevatedButton(
-            onPressed: () => context.refresh(moviesFutureProvider),
+            onPressed: () => context.refresh(homeViewModelFutureProvider),
             child: Text("Try again"),
           ),
         ],
