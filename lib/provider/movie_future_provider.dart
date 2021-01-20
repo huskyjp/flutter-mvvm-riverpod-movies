@@ -6,7 +6,7 @@ import 'package:riverpod_mvvp_movie/model/movie.dart';
 
 import 'movie_service_provider.dart';
 
-final moviesFutureProvider =
+final homeViewModelFutureProvider =
     FutureProvider.autoDispose<List<Movie>>((ref) async {
   ref.maintainState = true;
   // movieService has APIKey and dio
