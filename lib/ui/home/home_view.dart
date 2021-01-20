@@ -15,7 +15,7 @@ import 'movies_exception_view.dart';
 class HomeView extends HookWidget {
   @override
   Widget build(BuildContext context) {
-    final moviesProvider = useProvider(moviesFutureProvider);
+    final viewModelFutureProvider = useProvider(homeViewModelFutureProvider);
     return Padding(
       padding: const EdgeInsets.only(
         top: 30.0,
@@ -26,7 +26,7 @@ class HomeView extends HookWidget {
           centerTitle: true,
           title: Text('Riverpod Recommended Movies'),
         ),
-        body: moviesProvider.when(
+        body: viewModelFutureProvider.when(
           error: (e, s) {
             if (e is HomeExceptionView) {
               return ErrorBody(message: e.message);
@@ -43,7 +43,7 @@ class HomeView extends HookWidget {
             return RefreshIndicator(
               onRefresh: () {
                 // force riverpod to rebuild the data when suer refresh the page
-                return context.refresh(moviesFutureProvider);
+                return context.refresh(homeViewModelFutureProvider);
               },
 
               // actual UI
