@@ -23,6 +23,7 @@ class HomeView extends HookWidget {
       ),
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.black26,
           elevation: 0,
           centerTitle: true,
           title: Text('Riverpod Recommended Movies'),
