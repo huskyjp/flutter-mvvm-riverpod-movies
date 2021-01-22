@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/all.dart';
 import 'package:riverpod_mvvp_movie/provider/movie_future_provider.dart';
+import 'package:riverpod_mvvp_movie/ui/component/darkmode_switcher.dart';
 import 'package:riverpod_mvvp_movie/ui/component/home_error_body.dart';
 import 'package:riverpod_mvvp_movie/ui/component/home_movie_box.dart';
 import 'package:riverpod_mvvp_movie/ui/poster/poster_view.dart';
@@ -25,6 +26,9 @@ class HomeView extends HookWidget {
           elevation: 0,
           centerTitle: true,
           title: Text('Riverpod Recommended Movies'),
+          actions: [
+            DarkModeSwitcher(),
+          ],
         ),
         body: viewModelFutureProvider.when(
           error: (e, s) {
